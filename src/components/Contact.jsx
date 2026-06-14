@@ -31,39 +31,41 @@ export const Contact = () => {
     {
       icon: Github,
       label: 'GitHub',
-      url: '#',
-      color: 'from-gray-400 to-gray-600'
+      url: 'https://github.com/Elmehdi-web-school',
+      color: 'neutral'
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      url: '#',
-      color: 'from-blue-400 to-blue-600'
+      url: 'https://linkedin.com/in/elmehdi-bouelhrajane',
+      color: 'accent'
     },
     {
       icon: Mail,
       label: 'Email',
-      url: 'mailto:elmehdi@example.com',
-      color: 'from-purple-400 to-pink-600'
+      url: 'mailto:elmehdibouelhrajane@gmail.com',
+      color: 'soft'
     }
   ]
 
   return (
-    <section id="contact" className="py-20 md:py-32 px-4 md:px-8">
+    <section id="contact" className="px-4 py-20 md:px-8 md:py-32">
       <div className="max-w-4xl mx-auto">
         <motion.div
           ref={ref}
           variants={containerVariants}
           initial="hidden"
           animate={inView ? 'visible' : 'hidden'}
-          className="text-center space-y-8"
+          className="relative overflow-hidden rounded-3xl border border-theme-border/80 bg-theme-card/80 px-5 py-12 text-center shadow-soft backdrop-blur-xl dark:border-theme-dark-border dark:bg-theme-dark-card/80 dark:shadow-dark-soft md:px-10 md:py-16"
         >
+          <div className="absolute inset-x-0 top-0 h-1.5 bg-[linear-gradient(90deg,#1F6F78,#C77B38,#7A9B68)]" />
           {/* Title */}
           <motion.div variants={itemVariants}>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            <div className="section-kicker">Contact</div>
+            <h2 className="section-title mb-4">
               Let's Build Something Great
             </h2>
-            <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto">
+            <p className="section-copy max-w-2xl mx-auto">
               I'm always interested in hearing about new projects and opportunities. Feel free to reach out if you'd like to collaborate or just say hello.
             </p>
           </motion.div>
@@ -79,18 +81,17 @@ export const Contact = () => {
                 <motion.a
                   key={index}
                   href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   variants={itemVariants}
                   whileHover={{ scale: 1.05, y: -4 }}
-                  whileTap={{ scale: 0.95 }}
-                  className={`relative group px-8 py-4 rounded-xl bg-gradient-to-r ${link.color} text-white font-semibold transition-all hover:shadow-lg hover:shadow-current/20`}
+                  whileTap={{ scale: 0.98 }}
+                  className="relative group rounded-2xl border border-theme-border bg-theme-secondary/70 px-8 py-4 font-bold text-theme-text shadow-soft-sm transition-all duration-300 hover:border-theme-accent/50 hover:bg-theme-card dark:border-theme-dark-border dark:bg-theme-dark-secondary/70 dark:text-theme-dark-text dark:hover:border-theme-dark-accent/50 dark:hover:bg-theme-dark-card"
                 >
-                  <div className="flex items-center justify-center gap-2">
-                    <Icon size={20} />
+                  <div className="flex items-center justify-center gap-2 relative z-10">
+                    <Icon size={20} className="text-theme-accent dark:text-theme-dark-accent" />
                     <span>{link.label}</span>
                   </div>
-                  
-                  {/* Shine effect */}
-                  <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-white/0 via-white/20 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity -translate-x-full group-hover:translate-x-full duration-500" />
                 </motion.a>
               )
             })}
@@ -99,10 +100,10 @@ export const Contact = () => {
           {/* Additional message */}
           <motion.div
             variants={itemVariants}
-            className="pt-8 border-t border-gray-800/50"
+            className="mt-8 border-t border-theme-border pt-8 dark:border-theme-dark-border"
           >
-            <p className="text-gray-500 text-sm md:text-base">
-              Response time: 24-48 hours
+            <p className="text-theme-muted dark:text-theme-dark-muted text-sm md:text-base">
+              Response time: 2-24 hours
             </p>
           </motion.div>
         </motion.div>

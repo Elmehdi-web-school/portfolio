@@ -1,23 +1,23 @@
 export const skills = {
   frontend: [
-    { name: 'React', icon: 'Code2' },
-    { name: 'Tailwind CSS', icon: 'Palette' },
-    { name: 'JavaScript', icon: 'Code' },
-    { name: 'HTML', icon: 'LayoutGrid' },
-    { name: 'CSS', icon: 'Layers' }
+    { name: 'React', icon: 'react', type: 'fa' },
+    { name: 'Tailwind CSS', icon: 'tailwind', type: 'fa' },
+    { name: 'Bootstrap', icon: 'bootstrap', type: 'fa' },
+    { name: 'JavaScript', icon: 'js', type: 'fa' },
+    { name: 'HTML', icon: 'html5', type: 'fa' },
+    { name: 'CSS', icon: 'css3-alt', type: 'fa' }
   ],
   backend: [
-    { name: 'Node.js', icon: 'Server' },
-    { name: 'Express.js', icon: 'Network' },
-    { name: 'Laravel', icon: 'Database' }
+    { name: 'Node.js', icon: 'node-js', type: 'fa' },
+    { name: 'Laravel', icon: 'laravel', type: 'fa' }
   ],
   databases: [
-    { name: 'MongoDB', icon: 'HardDrive' },
-    { name: 'MySQL', icon: 'Archive' }
+    { name: 'MongoDB', icon: 'leaf', type: 'fa' },
+    { name: 'MySQL', icon: 'database', type: 'fa' }
   ],
   tools: [
-    { name: 'Git', icon: 'GitBranch' },
-    { name: 'Docker', icon: 'Box' },
-    { name: 'GitHub', icon: 'Github' }
+    { name: 'Git', icon: 'git-alt', type: 'fa' },
+    { name: 'Docker', icon: 'docker', type: 'fa' },
+    { name: 'GitHub', icon: 'github', type: 'fa' }
   ]
 }

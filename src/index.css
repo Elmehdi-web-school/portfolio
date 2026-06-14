@@ -14,9 +14,16 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background: #0A0A0A;
-  color: #FFFFFF;
+  background: #F8F7F2;
+  color: #171A1C;
   line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.dark body {
+  background: #101312;
+  color: #F6F3EA;
 }
 
 /* Custom scrollbar */
@@ -25,23 +32,35 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #0A0A0A;
+  background: #F8F7F2;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #404854;
+  background: #CBC7BA;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #505563;
+  background: #1F6F78;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #101312;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #2C3632;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #79C3C4;
 }
 
 /* Smooth transitions */
 * {
   transition-property: background-color, border-color, color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 200ms;
+  transition-duration: 300ms;
 }
 
 /* Remove default button styles */
@@ -58,42 +77,41 @@ a {
   color: inherit;
 }
 
-/* Gradient text utility */
-.gradient-text {
-  background: linear-gradient(to right, #60a5fa, #a855f7);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* Glass morphism effect */
-.glass {
-  background: rgba(17, 17, 17, 0.4);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
-
-/* Subtle animations */
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
 /* Selection color */
 ::selection {
-  background: rgba(96, 165, 250, 0.3);
-  color: #ffffff;
+  background: rgba(31, 111, 120, 0.22);
+  color: #171A1C;
 }
 
 ::-moz-selection {
-  background: rgba(96, 165, 250, 0.3);
-  color: #ffffff;
+  background: rgba(31, 111, 120, 0.22);
+  color: #171A1C;
+}
+
+.dark ::selection {
+  background: rgba(121, 195, 196, 0.28);
+  color: #F6F3EA;
+}
+
+.dark ::-moz-selection {
+  background: rgba(121, 195, 196, 0.28);
+  color: #F6F3EA;
+}
+
+@layer components {
+  .section-kicker {
+    @apply mb-3 inline-flex items-center gap-2 rounded-full border border-theme-border/80 bg-theme-card/80 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-theme-accent shadow-soft-sm backdrop-blur dark:border-theme-dark-border/80 dark:bg-theme-dark-card/80 dark:text-theme-dark-accent;
+  }
+
+  .section-title {
+    @apply text-4xl font-extrabold leading-tight text-theme-text dark:text-theme-dark-text md:text-5xl;
+  }
+
+  .section-copy {
+    @apply text-base leading-relaxed text-theme-muted dark:text-theme-dark-muted md:text-lg;
+  }
+
+  .glass-card {
+    @apply border border-white/70 bg-white/80 shadow-soft backdrop-blur-xl dark:border-white/10 dark:bg-theme-dark-card/80 dark:shadow-dark-soft;
+  }
 }

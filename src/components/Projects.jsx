@@ -29,7 +29,7 @@ export const Projects = () => {
   }
 
   return (
-    <section id="projects" className="py-20 md:py-32 px-4 md:px-8">
+    <section id="projects" className="px-4 py-20 md:px-8 md:py-32">
       <div className="max-w-7xl mx-auto">
         <motion.div
           ref={ref}
@@ -38,10 +38,11 @@ export const Projects = () => {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <div className="section-kicker">Selected Work</div>
+          <h2 className="section-title mb-4">
             Featured Projects
           </h2>
-          <p className="text-gray-400 text-base md:text-lg max-w-2xl">
+          <p className="section-copy max-w-2xl">
             Showcase of my best work building scalable and user-centric applications
           </p>
         </motion.div>

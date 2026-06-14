@@ -13,10 +13,11 @@ export default defineConfig({
         manualChunks: {
           'vendor': ['react', 'react-dom'],
           'animation': ['framer-motion'],
-          'icons': ['lucide-react']
+          'icons': ['lucide-react'],
+          'fontawesome': ['@fortawesome/react-fontawesome', '@fortawesome/fontawesome-svg-core', '@fortawesome/free-brands-svg-icons', '@fortawesome/free-solid-svg-icons']
         }
       }
     },
-    chunkSizeWarningLimit: 750
+    chunkSizeWarningLimit: 1500
   }
 })

@@ -4,53 +4,51 @@ export const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-gray-800/30 bg-gradient-to-t from-secondary/50 to-transparent py-12 px-4 md:px-8">
+    <footer className="border-t border-theme-border/80 bg-theme-secondary/70 px-4 py-12 dark:border-theme-dark-border dark:bg-theme-dark-secondary/70 md:px-8">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="flex flex-col md:flex-row justify-between items-center gap-6"
+          className="flex flex-col items-center justify-between gap-6 md:flex-row"
         >
-          {/* Left */}
           <div className="text-center md:text-left">
-            <p className="text-gray-400 text-sm">
+            <p className="text-sm font-medium text-theme-muted dark:text-theme-dark-muted">
               © {currentYear} Elmehdi Bouelhrajane. All rights reserved.
             </p>
           </div>
 
-          {/* Center */}
-          <div className="flex gap-6 text-xs text-gray-500">
+          <div className="flex gap-6 text-xs font-bold uppercase tracking-[0.14em] text-theme-muted dark:text-theme-dark-muted">
             <motion.a
-              href="#"
-              whileHover={{ color: '#ffffff' }}
+              href="#home"
+              whileHover={{ color: '#1F6F78' }}
               className="transition-colors"
             >
-              Privacy
+              Home
             </motion.a>
-            <span>•</span>
             <motion.a
-              href="#"
-              whileHover={{ color: '#ffffff' }}
+              href="#projects"
+              whileHover={{ color: '#1F6F78' }}
               className="transition-colors"
             >
-              Terms
+              Work
             </motion.a>
-            <span>•</span>
             <motion.a
-              href="#"
-              whileHover={{ color: '#ffffff' }}
+              href="#contact"
+              whileHover={{ color: '#1F6F78' }}
               className="transition-colors"
             >
-              Sitemap
+              Contact
             </motion.a>
           </div>
 
-          {/* Right */}
           <div className="text-center md:text-right">
-            <p className="text-gray-500 text-xs">
-              Designed & built with <span className="text-red-500">♥</span>
+            <p className="text-xs font-medium text-theme-muted dark:text-theme-dark-muted">
+              Designed and built with{' '}
+              <span className="font-bold text-theme-accent dark:text-theme-dark-accent">
+                React
+              </span>
             </p>
           </div>
         </motion.div>
